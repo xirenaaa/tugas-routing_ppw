@@ -8,10 +8,8 @@
 
     <title>@yield('title', 'Laravel App')</title>
 
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
     <style>
         * {
             margin: 0;
@@ -21,31 +19,37 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: white;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+            background: linear-gradient(-45deg, #fce0e6, #d8b4fe, #a7d7e8, #fbe2e3);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #1f2937;
         }
 
-        /* Glassmorphism Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            z-index: -1;
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
-        /* Glassmorphism Card */
+        /* Main Glassmorphism Card Style */
         .glass-card {
-            background: rgba(94, 96, 214, 0.5);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(100, 149, 237, 0.2);
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
 
@@ -60,9 +64,10 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background:rgba(44, 97, 255, 0.8) ;
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(174, 214, 241, 0.5);
+            /* Soft Blue, semi-transparent */
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .nav-container {
@@ -77,8 +82,9 @@
         .nav-brand {
             font-size: 1.5rem;
             font-weight: 700;
-            color: white;
+            color: #ffffff;
             text-decoration: none;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .nav-menu {
@@ -96,7 +102,7 @@
         }
 
         .nav-link:hover {
-            color: white;
+            color: #ffffff;
         }
 
         .nav-link::after {
@@ -106,7 +112,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: white;
+            background: #ffffff;
             transition: width 0.3s ease;
         }
 
@@ -128,45 +134,60 @@
         h4,
         h5,
         h6 {
-            color: white;
+            color: #111827;
+            /* Darkest grey for headings */
             margin-bottom: 1rem;
         }
 
         p {
-            color: rgba(255, 255, 255, 0.9);
+            color: #374151;
+            /* Medium grey for paragraphs */
             line-height: 1.6;
             margin-bottom: 1rem;
         }
+
+        .glass-card h1,
+        .glass-card h2,
+        .glass-card h3,
+        .glass-card h4,
+        .glass-card h5,
+        .glass-card h6,
+        .glass-card p {
+            color: #1f2937;
+            /* Consistent dark text on cards */
+        }
+
 
         /* Buttons */
         .btn {
             display: inline-block;
             padding: 0.75rem 2rem;
-            background: rgba(65, 105, 225, 0.8);
-            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #1f2937;
             text-decoration: none;
             border-radius: 50px;
-            border: 1px solid rgba(65, 105, 225, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.4);
             font-weight: 500;
             transition: all 0.3s ease;
             cursor: pointer;
-            border: none;
             font-size: 1rem;
         }
 
         .btn:hover {
-            background: rgba(65, 105, 225, 0.9);
+            background-color: rgba(255, 255, 255, 0.4);
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, #4169E1, #1E40AF);
+            background-color: #5dade2;
+            /* Soft blue from previous theme for consistency */
+            color: white;
             border: none;
         }
 
         .btn-primary:hover {
-            background: linear-gradient(45deg, #1E40AF, #1E3A8A);
+            background-color: #529fca;
         }
 
         /* Forms */
@@ -176,7 +197,7 @@
 
         .form-label {
             display: block;
-            color: white;
+            color: #374151;
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
@@ -184,23 +205,22 @@
         .form-control {
             width: 100%;
             padding: 0.75rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.6);
             border-radius: 10px;
-            color: white;
+            color: #1f2937;
             font-size: 1rem;
-            backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
 
         .form-control:focus {
             outline: none;
-            border-color: rgba(255, 255, 255, 0.4);
-            background: rgba(255, 255, 255, 0.15);
+            border-color: #5dade2;
+            box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.4);
         }
 
         .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+            color: #6b7280;
         }
 
         /* Grid */
@@ -235,13 +255,12 @@
             padding: 1rem;
             margin-bottom: 1rem;
             border-radius: 10px;
-            backdrop-filter: blur(10px);
         }
 
         .alert-success {
-            background: rgba(34, 197, 94, 0.2);
-            border: 1px solid rgba(34, 197, 94, 0.3);
-            color: #bbf7d0;
+            background: rgba(212, 237, 218, 0.8);
+            border: 1px solid rgba(195, 230, 203, 1);
+            color: #155724;
         }
     </style>
 
@@ -249,10 +268,9 @@
 </head>
 
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="{{ route('home') }}" class="nav-brand">LaravelApp</a>
+            <a href="{{ route('home') }}" class="nav-brand">Creativa</a>
             <ul class="nav-menu">
                 <li><a href="{{ route('home') }}" class="nav-link">Home</a></li>
                 <li><a href="{{ route('about') }}" class="nav-link">About</a></li>
@@ -261,12 +279,10 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main>
         @yield('content')
     </main>
 
-    <!-- Scripts -->
     <script>
         // Simple fade in animation
         document.addEventListener('DOMContentLoaded', function () {
@@ -278,7 +294,7 @@
                     card.style.transition = 'all 0.6s ease';
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
-                }, index * 200);
+                }, index * 150);
             });
         });
     </script>

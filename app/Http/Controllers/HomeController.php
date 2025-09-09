@@ -12,8 +12,8 @@ class HomeController extends Controller
     public function index()
     {
         $data = [
-            'title' => 'Welcome to Our App',
-            'subtitle' => 'Modern Laravel Application with Glassmorphism Design',
+            'title' => 'Welcome to Creativa',
+            'subtitle' => 'We transform your vision into a high-performing digital asset. We build custom web solutions designed to meet your unique business objectives',
             'features' => [
                 'Modern UI Design',
                 'Responsive Layout',

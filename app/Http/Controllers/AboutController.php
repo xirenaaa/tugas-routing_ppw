@@ -15,9 +15,9 @@ class AboutController extends Controller
             'title' => 'About Us',
             'description' => 'We are a modern web development team focused on creating beautiful and functional applications.',
             'team' => [
-                ['name' => 'John Developer', 'role' => 'Full Stack Developer'],
-                ['name' => 'Jane Designer', 'role' => 'UI/UX Designer'],
-                ['name' => 'Bob Manager', 'role' => 'Project Manager']
+                ['name' => 'Falah Auladi', 'role' => 'Full Stack Developer'],
+                ['name' => 'Angkara Messi', 'role' => 'UI/UX Designer'],
+                ['name' => 'Sir Bobby', 'role' => 'Project Manager']
             ],
             'stats' => [
                 ['label' => 'Projects Completed', 'value' => '150+'],

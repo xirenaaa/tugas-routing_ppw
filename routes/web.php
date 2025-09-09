@@ -23,21 +23,3 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 // Contact Routes
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-
-// Dashboard Route (contoh route dengan middleware auth)
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-// API Routes (contoh)
-Route::prefix('api')->group(function () {
-    Route::get('/users', function () {
-        return response()->json([
-            'message' => 'Success',
-            'data' => [
-                ['id' => 1, 'name' => 'John Doe'],
-                ['id' => 2, 'name' => 'Jane Smith']
-            ]
-        ]);
-    });
-});
