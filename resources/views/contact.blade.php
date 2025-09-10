@@ -102,7 +102,7 @@
                             <div>
                                 <h4 style="margin-bottom: 0.25rem; font-size: 1rem;">Address</h4>
                                 <p style="opacity: 0.8; margin: 0; font-size: 0.9rem;">
-                                    Jakarta, Indonesia<br>
+                                    Yogyakarta, Indonesia<br>
                                     12345
                                 </p>
                             </div>
@@ -116,7 +116,7 @@
                             <div>
                                 <h4 style="margin-bottom: 0.25rem; font-size: 1rem;">Phone</h4>
                                 <p style="opacity: 0.8; margin: 0; font-size: 0.9rem;">
-                                    +62 123 456 7890
+                                    +62 859 4221 1164
                                 </p>
                             </div>
                         </div>
@@ -129,7 +129,7 @@
                             <div>
                                 <h4 style="margin-bottom: 0.25rem; font-size: 1rem;">Email</h4>
                                 <p style="opacity: 0.8; margin: 0; font-size: 0.9rem;">
-                                    hello@laravelapp.com
+                                    falahauladi@gmail.com
                                 </p>
                             </div>
                         </div>
